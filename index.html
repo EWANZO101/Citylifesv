@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FiveM Server Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4; /* Gray background */
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        #startButton {
+            background-color: #4CAF50; /* Green */
+        }
+
+        #stopButton {
+            background-color: #f44336; /* Red */
+        }
+
+        #checkStatusButton {
+            background-color: #007bff; /* Blue */
+        }
+
+        p#serverStatus {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>FiveM Server Control</h1>
+
+    <!-- FiveM Server Control Section -->
+    <div>
+        <button id="startButton" onclick="startServer()">Start Server</button>
+        <button id="stopButton" onclick="stopServer()">Stop Server</button>
+        <button id="checkStatusButton" onclick="checkServerStatus()">Check Server Status</button>
+        <p id="serverStatus">FiveM Server Status: </p>
+    </div>
+
+    <script>
+        const serverAddress = 'http://localhost:30158/'; // Update with your FiveM server IP and port
+
+        function startServer() {
+            fetch(serverAddress + 'startServer')
+                .then(response => {
+                    // Handle the response or update UI accordingly
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Handle errors
+                });
+        }
+
+        // Similar functions for stopServer and checkServerStatus for the FiveM server
+    </script>
+</body>
+</html>
